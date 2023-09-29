@@ -8,7 +8,7 @@ function DeleteFaculty() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/faculty');
+                const response = await axios.get('https://mswd-sms.onrender.com/api/faculty');
                 setFacultyDetails(response.data)
             } catch (error) {
                 console.log(error.message);
@@ -19,7 +19,7 @@ function DeleteFaculty() {
 
     const deleteFaculty = async (_id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/faculty/${_id}`)
+            await axios.delete(`https://mswd-sms.onrender.com/api/faculty/${_id}`)
             const updatedFaculty = facultyDetails.filter(faculty => faculty._id !== _id)
             setFacultyDetails(updatedFaculty);
         } catch (error) {

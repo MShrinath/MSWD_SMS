@@ -16,7 +16,7 @@ function AddFaculty() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/api/faculty", {
+            await axios.post("https://mswd-sms.onrender.com/api/faculty", {
                 facultyName: facultyName,
                 facultyDept: department,
                 facutlyID: facultyId,

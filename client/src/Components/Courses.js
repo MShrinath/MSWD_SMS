@@ -3,7 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import SendIcon from '@mui/icons-material/Send'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { env } from 'react-dotenv';
 
 function Course() {
 
@@ -22,12 +22,13 @@ function Course() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/course", {
+            const response = await axios.post("https://mswd-sms.onrender.com/api/course", {
                 courseCode: coursecode,
                 courseName: coursename,
                 year: year
             });
             setStatus2(true);
+            console.log(env.REACT_APP_API_URL)
         } catch (error) {
             console.log("Error Sending Data", error);
         }
@@ -39,7 +40,7 @@ function Course() {
         formData.append('file', file)
 
         try {
-            await axios.post("http://localhost:5000/api/course/upload", formData, {
+            await axios.post("https://mswd-sms.onrender.com/api/course/upload", formData, {
                 headers: {
                     'content-type': 'multipart/form-data'
                 },
@@ -53,7 +54,7 @@ function Course() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/course');
+                const response = await axios.get('https://mswd-sms.onrender.com/api/course');
                 setData(response.data)
             } catch (error) {
                 console.log(error.message);
@@ -64,7 +65,7 @@ function Course() {
 
     const handleDelete = async (_id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/course/${_id}`)
+            await axios.delete(`https://mswd-sms.onrender.com/api/course/${_id}`)
             const updateData = data.filter(item => item._id !== _id)
             setData(updateData)
         } catch (error) {
@@ -74,7 +75,7 @@ function Course() {
 
     const handleUpdate = async (_id) => {
         try {
-            await axios.put(`http://localhost:5000/api/course/${_id}`,
+            await axios.put(`https://mswd-sms.onrender.com/api/course/${_id}`,
                 {
                     coursecode: coursecode,
                     couresename: coursename,
