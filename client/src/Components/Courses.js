@@ -3,7 +3,6 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import SendIcon from '@mui/icons-material/Send'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { env } from 'react-dotenv';
 
 function Course() {
 
@@ -28,7 +27,6 @@ function Course() {
                 year: year
             });
             setStatus2(true);
-            console.log(env.REACT_APP_API_URL)
         } catch (error) {
             console.log("Error Sending Data", error);
         }
