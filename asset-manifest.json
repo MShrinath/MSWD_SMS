@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MSWD_SMS/static/css/main.cf1f4050.css",
+    "main.js": "/MSWD_SMS/static/js/main.9589f718.js",
+    "index.html": "/MSWD_SMS/index.html",
+    "main.cf1f4050.css.map": "/MSWD_SMS/static/css/main.cf1f4050.css.map",
+    "main.9589f718.js.map": "/MSWD_SMS/static/js/main.9589f718.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf1f4050.css",
+    "static/js/main.9589f718.js"
+  ]
+}
