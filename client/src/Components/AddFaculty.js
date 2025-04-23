@@ -23,7 +23,7 @@ function AddFaculty() {
                 qualification: qualification,
                 designation: designation,
                 email: email,
-                password: "KLU123"
+                password: password,
             })
             setStatus1(true)
         } catch (error) {

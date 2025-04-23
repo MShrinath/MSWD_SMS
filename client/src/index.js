@@ -4,7 +4,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 
-import Profile from './Components/Profile';
+// import Profile from './Components/Profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

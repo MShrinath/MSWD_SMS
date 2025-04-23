@@ -16,7 +16,7 @@ function Profile() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/student', {
+            await axios.post('http://localhost:5000/api/student', {
                 name: stuname,
                 subject: subj,
                 age: stuage

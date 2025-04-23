@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../App.css";
 import { Button, Grid, TextField, Alert } from "@mui/material";
-import axios from "axios";
+// import axios from "axios"; 
 
 function UpdateFaculty() {
     const [faculty, setFaculty] = useState(null);
-    const [status1, setStatus1] = useState(false);
+    // const [status1, setStatus1] = useState(false);
+    let status1 = false;
 
     const handleChange = (e) => {
         const {name,value} = e.target;
@@ -99,7 +100,7 @@ function UpdateFaculty() {
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: "center" }}>
                     <Button variant="contained" onClick={handleClick}>
-                        Get Faculty
+                        Update Faculty
                     </Button>
                 </Grid>
                 {

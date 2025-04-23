@@ -21,7 +21,7 @@ function Course() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post("https://mswd-sms.onrender.com/api/course", {
+            await axios.post("https://mswd-sms.onrender.com/api/course", {
                 courseCode: coursecode,
                 courseName: coursename,
                 year: year
