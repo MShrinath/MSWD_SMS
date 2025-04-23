@@ -21,7 +21,7 @@ function Course() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("https://mswd-sms.onrender.com/api/course", {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/course`, {
                 courseCode: coursecode,
                 courseName: coursename,
                 year: year
@@ -38,7 +38,7 @@ function Course() {
         formData.append('file', file)
 
         try {
-            await axios.post("https://mswd-sms.onrender.com/api/course/upload", formData, {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/course/upload`, formData, {
                 headers: {
                     'content-type': 'multipart/form-data'
                 },
@@ -52,7 +52,7 @@ function Course() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://mswd-sms.onrender.com/api/course');
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/course`);
                 setData(response.data)
             } catch (error) {
                 console.log(error.message);
@@ -63,7 +63,7 @@ function Course() {
 
     const handleDelete = async (_id) => {
         try {
-            await axios.delete(`https://mswd-sms.onrender.com/api/course/${_id}`)
+            await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/course/${_id}`)
             const updateData = data.filter(item => item._id !== _id)
             setData(updateData)
         } catch (error) {
@@ -73,7 +73,7 @@ function Course() {
 
     const handleUpdate = async (_id) => {
         try {
-            await axios.put(`https://mswd-sms.onrender.com/api/course/${_id}`,
+            await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/course/${_id}`,
                 {
                     coursecode: coursecode,
                     couresename: coursename,

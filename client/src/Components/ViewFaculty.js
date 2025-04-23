@@ -8,7 +8,7 @@ function ViewFaculty() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://mswd-sms.onrender.com/api/faculty');
+                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/faculty`);
                 setFacultyDetails(response.data)
             } catch (error) {
                 console.log(error.message);
